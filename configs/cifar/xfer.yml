@@ -1,0 +1,29 @@
+method: 'xfer'
+arch: 'resnet20'
+noise_sd: 0.25
+exp_id: ''
+METHOD:
+  t_arch: 'resnet110'
+  t_loadpath: '/path/to/teacher/checkpoint.pth.tar'
+  alpha: 1.0
+TRAIN:
+  epochs: 200
+  lr: 0.1
+  momentum: 0.9
+  weight_decay: 0.0001
+  lr_scheduler: 'multistep'
+  resume: False
+  resume_ckpt: ''
+DATA:
+  dataset: 'cifar'
+  num_classes: 10
+  batch_size: 128
+  test_batch_size: 1000
+  workers: 4
+CERTIFY:
+  load_path: ''
+  start_img: 0
+  skip: 1
+  beta: 1.0
+  certify_interval: 1
+  certify_after: 200
