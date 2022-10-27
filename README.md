@@ -5,7 +5,7 @@ This repository contains code for our paper:
 **Accelerating Certified Robustness Training via Knowledge Transfer**<br>
 _Pratik Vaishnavi, Kevin Eykholt, Amir Rahmati_<br>
 
-[//]: # (Paper: <add link>)
+Paper: https://arxiv.org/pdf/2210.14283.pdf
 
 
 ### Citation
@@ -13,7 +13,7 @@ _Pratik Vaishnavi, Kevin Eykholt, Amir Rahmati_<br>
 @inproceedings{vaishnavi2022crt,
  author = {Vaishnavi, Pratik and Eykholt, Kevin and Rahmati, Amir},
  booktitle = {Advances in Neural Information Processing Systems},
- title = {SmoothMix: Training Confidence-calibrated Smoothed Classifiers for Certified Robustness},
+ title = {Accelerating Certified Robustness Training via Knowledge Transfer},
  year = {2022}
 }
 ```
@@ -70,7 +70,9 @@ Please appropriately set the parameters in the config file. See [Config File](#c
 
 The certification script is based on the one from the [MACER repo](https://github.com/RuntianZ/macer). To certify the robustness of a smoothed classifier, set the `load_path` in the config file and run:
 
-```python main.py --gpu 0 --config configs/cifar/xfer.yml --do-certify```
+```
+python main.py --gpu 0 --config configs/cifar/xfer.yml --do-certify
+```
 
 This will load the base classifier saved at path provided at `load_path`, smooth it using noise level `noise_sd` (also in the config file),
 and certify with parameters `N0=100`, `N=100000`, and `alpha=0.001`.
